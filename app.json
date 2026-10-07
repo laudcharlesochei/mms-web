@@ -1,0 +1,15 @@
+{
+  "name": "MMS Web (V1)",
+  "description": "Mentor Management System React SPA served by Express on Heroku",
+  "repository": "https://github.com/your-org/mms-web-v1",
+  "stack": "heroku-24",
+  "buildpacks": [{ "url": "heroku/nodejs" }],
+  "env": {
+    "NODE_ENV": { "value": "production" },
+    "API_BASE_URL": { "description": "The mms-api URL, e.g. https://uod-ga-mms-api.herokuapp.com", "required": true },
+    "ENTRA_CLIENT_ID": { "description": "SPA app registration id (only if the API uses AUTH_MODE=entra)", "required": false },
+    "ENTRA_TENANT_ID": { "description": "UoD tenant id (Entra mode)", "required": false },
+    "ENTRA_API_SCOPE": { "description": "e.g. api://mms-api/access_as_user (Entra mode)", "required": false }
+  },
+  "formation": { "web": { "quantity": 1, "size": "basic" } }
+}
